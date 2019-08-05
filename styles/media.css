@@ -1,7 +1,32 @@
 
 @media only screen and (max-width: 1140px) {
-    .content {
+    .container {
         padding: 0 15px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .user {
+        margin-right: 40px;
+    }
+    section.content {
+        max-width: 820px;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .user {
+        float: none;
+        display: block;
+        width: 247px;
+        margin: auto;
+    }
+
+    .user:last-of-type {
+        float: none;
+        display: block;
+        width: 247px;
+        margin: 0 auto 34px;
     }
 }
 

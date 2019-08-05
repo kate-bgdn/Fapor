@@ -8,6 +8,17 @@
     url('fonts/opensans.svg#opensans') format('svg');
 }
 
+@font-face {
+    font-family: 'raleway';
+    src: url('fonts/raleway.eot');
+    src: url('fonts/raleway.eot') format('embedded-opentype'),
+    url('fonts/raleway.woff2') format('woff2'),
+    url('fonts/raleway.woff') format('woff'),
+    url('fonts/raleway.ttf') format('truetype'),
+    url('fonts/raleway.svg#raleway') format('svg');
+}
+
+
 * {
     margin: 0;
     font-family: 'opensans', sans-serif;
@@ -23,12 +34,12 @@ header {
     padding: 30px 0 27px;
 }
 
-.content {
+.container {
     max-width: 1095px;
     margin: auto;
 }
 
-.content:after {
+.container:after {
     content: '';
     display: block;
     clear: both;
@@ -83,4 +94,97 @@ p {
     font-size: 11px;
     max-width: 625px;
     line-height: 17px;
+}
+
+section.content {
+    max-width: 900px;
+    padding: 120px 0 35px;
+    margin: auto;
+}
+
+h2 /*Raleway SemiBold Font*/ {
+    font-family: 'raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 19px;
+    color: #24282f;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2:after {
+    content: '';
+    display: block;
+    margin: 25px auto 30px;
+    width: 62px;
+    height: 2px;
+    background-color: #b5a263;
+}
+
+.user {
+    float: left;
+    margin-right: 80px;
+    margin-bottom: 34px;
+}
+
+.user:last-of-type {
+    margin-right: 0;
+}
+
+.user::after {
+    content: '';
+    display: inline-block;
+    clear: both;
+}
+
+section.content::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.user-name {
+    font-family: 'raleway', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #232323;
+    line-height: 13px;
+    margin-top: 25px;
+    text-transform: uppercase;
+}
+
+span.user-vacancy {
+    display: inline-block;
+    font-size: 11px;
+    color: #b5a263;
+}
+
+a.icon {
+    position: relative;
+    top: -32px;
+    display: inline-block;
+    float: right;
+    background-color: #dedede;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 20px;
+    margin-right: 5px;
+    padding-top: 3px;
+    box-sizing: border-box;
+}
+
+section.show-all-link {
+    width: 100%;
+    text-align: center;
+}
+
+a.show-all-link {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #24282f;
+    padding: 14px 30px;
+    border: #24282f solid 1px;
+    border-radius: 25px;
 }
