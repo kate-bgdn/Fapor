@@ -23,12 +23,12 @@ header {
     padding: 30px 0 27px;
 }
 
-.container {
+.content {
     max-width: 1095px;
     margin: auto;
 }
 
-.container:after {
+.content:after {
     content: '';
     display: block;
     clear: both;
@@ -64,4 +64,23 @@ header nav ul li a {
 
 header nav ul li a:hover {
     border-bottom: 2px solid #b5a263;
+}
+
+section.banner {
+    background: url("../images/bg.png") no-repeat #24282f;
+    color: white;
+    padding: 70px 0 85px;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 31px;
+    font-weight: bold;
+    margin-bottom: 17px;
+}
+
+p {
+    font-size: 11px;
+    max-width: 625px;
+    line-height: 17px;
 }
