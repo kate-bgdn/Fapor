@@ -225,6 +225,11 @@ div.info:first-of-type {
     margin-right: 135px;
 }
 
+section.carousel {
+    padding: 95px 0 85px;
+    background-color: #f7f7f7;
+}
+
 
 h4, label {
     font-weight: bold;
@@ -255,16 +260,19 @@ form input {
     margin-bottom: 10px;
 }
 
-footer form button {
+footer form button, footer a.popup-link-1 {
+    display: inline-block;
+    box-sizing: border-box;
     width: 257px;
     padding: 10px;
     font-size: 11px;
     color: #ffffff;
+    text-align: center;
     background-color: #b5a263;
     box-shadow: none;
     border: none;
     text-transform: uppercase;
-
+    margin-bottom: 10px;
 }
 
 footer section.second-bg {
@@ -313,4 +321,103 @@ footer section.second-bg a i.fa-dribbble {
     content: '';
     display: block;
     clear: both;
+}
+
+
+
+/* POP-UP */
+
+
+.popup-box {
+    position: absolute;
+    border-radius: 5px;
+    background: #fff;
+    display: none;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+    z-index: 3;
+}
+
+.popup-box .close {
+    position: absolute;
+    top: 1px;
+    right: 0;
+    font-family: 'raleway', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    color: #434343;
+    padding: 20px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.popup-box .close:hover {
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+.popup-box h5 {
+    padding: 0;
+    margin: 0;
+
+    font-family: 'raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: normal;
+    color: #FFFFFF;
+}
+.popup-box .top {
+    padding: 40px 0 40px 50px;
+    background-color: black;
+}
+
+.popup-box .bottom {
+    background: #fbfbfb;
+    border-top: 1px solid #e5e5e5;
+    padding: 20px 50px 50px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.bottom form input, .bottom form button, .bottom form a {
+    width: 300px;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.bottom form button {
+    font-size: 12px;
+}
+
+.bottom form span {
+    font-family: 'raleway', sans-serif;
+    display: block;
+    text-align: center;
+    position: relative;
+
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.bottom form a {
+    background-color: #547aca;
+    padding: 10px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+}
+
+.bottom form a i {
+    margin-right: 5px;
+}
+
+#blackout {
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    left: 0;
+    display: none;
 }

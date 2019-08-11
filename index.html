@@ -7,10 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fapor</title>
 
+    
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/media.css">
 
     <link rel="stylesheet" href="styles/fontawesome/web-fonts-with-css/css/fontawesome-all.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
 </head>
 <body>
 
@@ -140,6 +145,10 @@
 
     <section class="carousel">
 
+        <div class="content">
+
+        </div>
+
     </section>
 
     <footer>
@@ -177,7 +186,39 @@
                         <label for="email">Subscribe to our newsletter</label>
                         <input type="text" id="email" placeholder="Enter your email address">
                         <button type="submit">subscrible now</button>
+
                     </form>
+
+                    <a class="popup-link-1" href="">Forgot password</a>
+
+                    <div class="popup-box" id="popup-box-1">
+
+                        <div class="close">X</div>
+
+                        <div class="top">
+                            <h5>Forgot your password?</h5>
+                        </div>
+
+                        <div class="bottom">
+
+                            <form action="" method="post">
+
+                                <input type="text" placeholder="Enter your email">
+
+                                <button type="submit">Reset Password</button>
+
+                                <span>OR</span>
+
+                                <a href="http://facebook.com" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                    log in using facebook
+                                </a>
+
+                            </form>
+                        </div>
+                    </div>
+
+
                 </div>
 
             </section>
@@ -202,10 +243,85 @@
 
             </section>
         </section>
-
-
-
     </footer>
+
+
+
+
+
+    <script>
+        $(document).ready(function() {
+
+            $('body').append('<div id="blackout"></div>');
+
+            var boxWidth = 400;
+
+            function centerBox() {
+
+                /* определяем нужные данные */
+                var winWidth = $(window).width();
+                var winHeight = $(document).height();
+                var scrollPos = $(window).scrollTop();
+
+                /* Вычисляем позицию */
+
+                var disWidth = (winWidth - boxWidth) / 2
+                var disHeight = scrollPos + 150;
+
+                /* Добавляем стили к блокам */
+                $('.popup-box').css({'width' : boxWidth+'px', 'left' : disWidth+'px', 'top' : disHeight+'px'});
+                $('#blackout').css({'width' : winWidth+'px', 'height' : winHeight+'px'});
+
+                return false;
+            }
+
+            $(window).resize(centerBox);
+            $(window).scroll(centerBox);
+            centerBox();
+
+            $('[class*=popup-link]').click(function(e) {
+
+                /* Предотвращаем действия по умолчанию */
+                e.preventDefault();
+                e.stopPropagation();
+
+                /* Получаем id (последний номер в имени класса ссылки) */
+                var name = $(this).attr('class');
+                var id = name[name.length - 1];
+                var scrollPos = $(window).scrollTop();
+
+                /* Корректный вывод popup окна, накрытие тенью, предотвращение скроллинга */
+                $('#popup-box-'+id).show();
+                $('#blackout').show();
+                $('html,body').css('overflow', 'hidden');
+
+                /* Убираем баг в Firefox */
+                $('html').scrollTop(scrollPos);
+            });
+
+            $('[class*=popup-box]').click(function(e) {
+                /* Предотвращаем работу ссылки, если она являеться нашим popup окном */
+                e.stopPropagation();
+            });
+            $('html').click(function() {
+                var scrollPos = $(window).scrollTop();
+                /* Скрыть окно, когда кликаем вне его области */
+                $('[id^=popup-box-]').hide();
+                $('#blackout').hide();
+                $("html,body").css("overflow","auto");
+                $('html').scrollTop(scrollPos);
+            });
+            $('.close').click(function() {
+                var scrollPos = $(window).scrollTop();
+                /* Скрываем тень и окно, когда пользователь кликнул по X */
+                $('[id^=popup-box-]').hide();
+                $('#blackout').hide();
+                $("html,body").css("overflow","auto");
+                $('html').scrollTop(scrollPos);
+            });
+        });
+
+    </script>
 
 </body>
 </html>

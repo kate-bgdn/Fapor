@@ -62,3 +62,39 @@
     }
 
 }
+
+@media only screen and (max-width: 376px) {
+    .popup-box .close {
+        margin-right: 60px;
+        margin-top: 15px;
+        padding: 0;
+    }
+    .popup-box h5 {
+        font-size: 14px;
+        display: inline-block;
+        margin-left: 50px;
+    }
+
+    .popup-box .top {
+        padding: 20px;
+    }
+
+    .popup-box .bottom {
+        padding: 20px 0 50px 60px;
+    }
+
+    .bottom form input, .bottom form button, .bottom form a {
+        width: 280px;
+    }
+
+    .bottom form span {
+        left: -35px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .popup-box .close {
+        margin-right: 60px;
+        padding: 0;
+    }
+}
