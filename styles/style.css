@@ -258,6 +258,7 @@ form input {
     border: solid 1px #6e7279;
     margin-top: 20px;
     margin-bottom: 10px;
+    outline: none;
 }
 
 footer form button, footer a.popup-link-1 {
@@ -421,3 +422,9 @@ footer section.second-bg a i.fa-dribbble {
     left: 0;
     display: none;
 }
+
+
+div.overlay {
+    display: none;
+}
+

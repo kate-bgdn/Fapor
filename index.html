@@ -14,6 +14,15 @@
     <link rel="stylesheet" href="styles/fontawesome/web-fonts-with-css/css/fontawesome-all.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $("#navToggle").click(function() {
+            $(this).toggleClass("active");
+            $(".overlay").toggleClass("open");
+            // this line ▼ prevents content scroll-behind
+            $("body").toggleClass("locked");
+        });
+    </script>
+
 
 
 </head>
@@ -25,7 +34,7 @@
                 <img src="images/logo.png" alt="">
             </a>
 
-            <nav>
+            <nav class="desktop">
                 <ul>
                     <li>
                         <a href="#" title="Home">home</a>
@@ -44,6 +53,20 @@
                     </li>
                 </ul>
             </nav>
+
+            <div class="overlay">
+                <nav class="overlayMenu">
+                    <ul role="menu">
+                        <li><a href="#" role="menuitem">home</a></li>
+                        <li><a href="#" role="menuitem">about</a></li>
+                        <li><a href="#" role="menuitem">service</a></li>
+                        <li><a href="#" role="menuitem">portfolio</a></li>
+                        <li><a href="#" role="menuitem">contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="navBurger" role="navigation" id="navToggle"></div>
+
         </div>
     </header>
 
@@ -246,9 +269,33 @@
     </footer>
 
 
+    <script>
+        $("#navToggle").click(function() {
+            $(this).toggleClass("active");
+            $(".overlay").toggleClass("open");
+            // this line ▼ prevents content scroll-behind
+            $("body").toggleClass("locked");
+        });
+    </script>
 
 
 
+    <script type="text/javascript">
+
+        window.onscroll = function() {myFunction()};
+
+        var header = document.getElementById("navToggle");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+
+    </script>
     <script>
         $(document).ready(function() {
 
