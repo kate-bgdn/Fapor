@@ -45,6 +45,9 @@
         margin: auto;
         padding-bottom: 30px;
     }
+    div.carousel-item p {
+        padding: 0 60px;
+    }
 }
 
 @media only screen and (max-width: 670px) {
@@ -80,7 +83,9 @@
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
         -webkit-transition: all 0.25s ease-in-out;
-        transition: all 0.25s ease-in-out; }
+        transition: all 0.25s ease-in-out;
+
+    }
     .navBurger:before, .navBurger:after {
         content: "";
         position: absolute;
@@ -116,7 +121,7 @@
         background: #FFFFFF;
         width: 110%; }
 
-    .overlay {
+    div.overlay {
         position: fixed;
         background: #b5a263;
         top: 0;
@@ -129,6 +134,7 @@
         visibility: hidden;
         transition: all 0.4s ease-in-out;
         overflow: hidden;
+        display: inline-block;
     }
     .overlay.open {
         opacity: 0.99;
@@ -198,10 +204,6 @@
             left: 0;
             transform: rotate(0deg); } }
 
-
-    div.overlay {
-        display: inline-block;
-    }
     .sticky {
         background-color: #b5a263;
         transition: 0.7s;
@@ -242,6 +244,9 @@
     .bottom form span {
         left: -35px;
     }
+    div.carousel-item p {
+        padding: 0 50px;
+    }
 }
 
 @media only screen and (max-width: 320px) {
@@ -249,8 +254,6 @@
         margin-right: 60px;
         padding: 0;
     }
-
-
 }
 
 /*menu for 670px
